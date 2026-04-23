@@ -25,7 +25,6 @@ wiki/
   overview.md       — High-level synthesis of embodied intelligence as a field
   concepts/         — Concept/topic pages (e.g., sim-to-real, affordance, world models)
   entities/         — Entity pages (e.g., labs, researchers, datasets, robot platforms)
-  sources/          — Per-source summary pages
   comparisons/      — Comparison tables/analyses from queries
   methods/          — Technical method pages (e.g., algorithms, training approaches)
   applications/     — Domain application pages (e.g., manipulation, navigation)
@@ -50,8 +49,6 @@ wiki/
 ## Entities
 - [[RT-2]] — Google DeepMind的视觉-语言-动作模型
 
-## Sources
-- [[2304.13705v1]] — ...
 ```
 
 ---

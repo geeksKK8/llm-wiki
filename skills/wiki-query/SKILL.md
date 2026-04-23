@@ -8,10 +8,10 @@ description: Use when the user asks a question that should be answered from the 
 ## Before Starting
 
 Read the project's `CLAUDE.md` to understand domain configuration:
-- Domain categories and directory structure (what goes in `concepts/`, `entities/`, `methods/`, etc.)
+- Wiki Structure — what directories exist and what each contains
 - Language conventions (default language, how to handle technical terms)
 - Source ID derivation rules
-- What constitutes a "concept" vs "entity" vs "method" in this domain
+- What each category in the Wiki Structure represents for this domain
 
 This ensures your answer uses the correct terminology, categorization, and cross-reference style for the current knowledge base.
 
@@ -32,9 +32,9 @@ Query answers questions from the wiki's accumulated knowledge, not by re-derivin
 3. **Go to raw sources if needed** — If wiki pages lack sufficient detail, read the original `raw/` documents referenced in their `sources` frontmatter.
 4. **Synthesize answer** — Compose the answer in the language specified by CLAUDE.md with `[[wikilinks]]` citations pointing to source wiki pages. Present clearly to the user.
 5. **File valuable answers back** — If the answer is a standalone artifact worth preserving:
-   - Comparison → `wiki/comparisons/`
-   - New concept analysis → `wiki/concepts/`
-   - New connection/synthesis → appropriate category
+   - Comparison → appropriate directory per CLAUDE.md's Wiki Structure
+   - New topic analysis → appropriate directory per CLAUDE.md's Wiki Structure
+   - New connection/synthesis → appropriate directory per CLAUDE.md's Wiki Structure
    - Add frontmatter, update `index.md`, append to `log.md`
 
 ## Decision: When to file back?

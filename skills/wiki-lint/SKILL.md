@@ -8,7 +8,7 @@ description: Use when the user asks to health-check the wiki, or periodically wh
 ## Before Starting
 
 Read the project's `CLAUDE.md` to understand domain configuration:
-- Domain categories and directory structure
+- Wiki Structure — what directories exist and what each contains
 - Language conventions
 - What "stale" means in this domain (e.g., superseded papers vs. outdated analysis vs. deprecated APIs)
 - Coverage scope — what topics the wiki should and shouldn't cover

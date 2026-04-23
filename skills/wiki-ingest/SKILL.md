@@ -8,12 +8,12 @@ description: Use when adding a new source document to the raw directory and proc
 ## Before Starting
 
 Read the project's `CLAUDE.md` to understand domain configuration:
-- Domain categories and directory structure (what goes in `concepts/`, `entities/`, `methods/`, etc.)
+- Wiki Structure — what directories exist and what each contains
 - Language conventions (default language, how to handle technical terms)
 - Source ID derivation rules
-- What constitutes a "concept" vs "entity" vs "method" in this domain
+- What each category in the Wiki Structure represents for this domain
 
-This ensures you create/update pages in the correct categories and use the right terminology.
+This ensures you create/update pages in the correct directories and use the right terminology.
 
 ## Overview
 
@@ -31,20 +31,19 @@ Every ingest MUST complete ALL steps below. Use TaskCreate to track progress per
 
 1. **Read source** — Read the full document from `raw/`. For PDFs, read page ranges as needed. For images in sources, read them separately after text.
 2. **Discuss with user** — Summarize key takeaways, ask what to emphasize, clarify ambiguous points. The user curates direction.
-3. **Create source summary** — Write `wiki/sources/{source-id}.md` with frontmatter (`title`, `tags`, `sources`, `updated`) and structured summary (language per CLAUDE.md). Include original-language quotes where phrasing matters.
-4. **Update concept/entity pages** — Identify key concepts and entities from the source. For each:
+3. **Update wiki pages** — Identify key topics from the source. For each:
    - If page exists: update with new information, add source ID to `sources` field, update `updated` date
    - If page doesn't exist: create it with full frontmatter and initial content
-   - Pages go to appropriate directories: `wiki/concepts/`, `wiki/entities/`, `wiki/methods/`, `wiki/applications/`
-5. **Update overview** — If the source affects the high-level synthesis of the field, update `wiki/overview.md`.
+   - Pages go to directories per CLAUDE.md's Wiki Structure
+5. **Update overview** — If the source affects the high-level synthesis, update `wiki/overview.md`.
 6. **Update index** — Add all new/changed pages to `wiki/index.md` under appropriate categories with one-line summaries (language per CLAUDE.md).
-7. **Append log** — Add entry to `wiki/log.md`: `## [YYYY-MM-DD] ingest | Source Title`, noting which pages were created/updated.
+7. **Append log** — Add entry to `wiki/log.md`: `## [YYYY-MM-DD] ingest | Source Title`, noting which pages were created/updated and a brief summary of key findings from this source.
 
 ## Common Mistakes
 
 | Mistake | Fix |
 |---------|-----|
-| Creating only a standalone source summary, not touching other pages | Step 4 is the core value — always update existing pages |
+| Creating only a standalone page for the source, not touching other pages | Step 3 is the core value — always update existing pages across the wiki |
 | Skipping the discussion step | User curates direction; don't assume emphasis |
 | Forgetting to update frontmatter `sources` field | Every touched page must list the source ID |
 | Writing wiki pages in wrong language | Use the language specified in CLAUDE.md, with technical terms in their original language alongside |
